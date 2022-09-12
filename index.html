@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>eFOIPA Generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <!--
+            dropdone of org
+                FBI
+                    Date
+
+                    FBI loc
+
+                    "Dear FOIA Office"
+
+                    Checkbox "Privacy Act"
+
+                    This is a request under (the Privacy Act & )Freedom of Information Act 
+
+                    date range
+
+                    Description of request: Textbox
+
+                    Please search the FBI’s indices to the Central Records System for the information responsive to this request related to: Textbox
+
+                    I am willing to pay up to [$INT] for the processing of this request. Please inform me if the estimated fees will exceed this limit before processing my request.
+                    
+                    Checkbox I am seeking information for personal use and not for commercial use.
+                    
+                    Thank you for your consideration, Textbox (VarName)
+
+                    Name: (VarName)
+                    Street Address: TextBox
+                    City/State/ZIP Code: 
+                    Country: (preset to us) Dropdown
+                    Telephone: (INT-INT-INT)
+                    Email: Email
+
+                    Generate Button
+
+            -->
+            <br>
+            <br>
+            <br>
+            <form action="#" class="dropdown">
+                <label for="org">Organization</label>
+                <select name="organization" id="org">
+                    <option value="selectorg">Select An Organization</option>
+                    <option value="FBI">FBI</option>
+                </select>
+                <input type="submit" value="Submit" />
+            </form>
+
+            <p id="date"></p>
+
+            <p id="loc"></p>
+
+            <p>Dear FOIA Office</p>
+
+            <a>Are you using the <a href="https://www.aclu.org/issues/national-security/privacy-and-surveillance/surveillance-under-patriot-act">Privacy Act</a>: </a>
+            <input class="checkbox" type="checkbox" id="privacyAct">
+
+            <p>Date Range</p>
+            <input id="datepicker1"/>
+            <input id="datepicker2"/>
+            
+            <br>
+            <label for="description">Description of request:</label>
+            <br>
+            <input type="text" id="description" name="description">
+            
+            <br>
+            <label for="informationResponsive">Please search the FBI’s indices to the Central Records System for the information responsive to this request related to: </label>
+            <br>
+            <input type="text" id="informationResponsive" name="informationResponsive">
+            
+            <br>
+            <label for="amount">Description of request: $</label>
+            <input type="number" id="amount" name="amount">
+
+            <br>
+            <a>Are you seeking information for personal use and not for commercial use :</a>
+            <input class="checkbox" type="checkbox" id="personalUse">
+
+            <br>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name">
+
+            <br>
+            <label for="streetAddress">Street Address: </label>
+            <input type="text" id="streetAddress" name="streetAddress">
+
+            <br>
+            <label for="zipcode">Zipcode: </label>
+            <input type="text" id="zipcode" name="zipcode">
+
+            <label for="city">City: </label>
+            <input type="text" id="city" name="city">
+            
+            <label for="state">State: </label>
+            <input type="text" id="state" name="state">
+
+            <p>Telephone: </p>
+            <input type="number" id="phone1" name="phone1">
+            -<input type="number" id="phone2" name="phone2">
+            -<input type="number" id="phone3" name="phone3">
+
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email">
+            
+            <label for="generate">Generate eFOIPA</label>
+            <input type="button" id="generate" name="generate">
+
+
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
