@@ -40,31 +40,10 @@ const picker2 = new easepick.create({
 })
 
 
-window.findAddressFromZip = function(zipcode) {
-    var city, state, zip;
-    zip = zipcode.value;
-    city = '';
-    state = '';
-    if (zip.length === 5) {
-      $.ajax({
-        type: 'POST',
-        url: "http://maps.googleapis.com/maps/api/geocode/json?address=" + zip + "?key=XXXXXXXXXXXXXXXXXXXX",
-        success: (function(_this) {
-          return function(data) {
-            if (data["status"] === "OK") {
-              $('input#user_account_attributes_address_attributes_city').val(data["results"][0]["address_components"][1]["long_name"]);
-              return $('select#user_account_attributes_address_attributes_state').val(data["results"][0]["address_components"][4]["long_name"]);
-            }
-          };
-        })(this)
-      });
-    }
-  };
-
 
   $(function() {
 	// IMPORTANT: Fill in your client key
-	var clientKey = "FILL_IN_CLIENT_KEY";
+	var clientKey = "js-TNQ0BYVhR6OxRu3ATl96JOwEl4kAuJlyt14FP9E7CkVCzL15zVnpI7wdaRxHw60T";
 
 	var cache = {};
 	var container = $("#example1");
