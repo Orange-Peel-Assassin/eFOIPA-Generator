@@ -46,7 +46,7 @@ const picker2 = new easepick.create({
 	var clientKey = "js-TNQ0BYVhR6OxRu3ATl96JOwEl4kAuJlyt14FP9E7CkVCzL15zVnpI7wdaRxHw60T";
 
 	var cache = {};
-	var container = $("#example1");
+	var container = $("#container");
 	var errorDiv = container.find("div.text-error");
 
 	/** Handle successful response */
